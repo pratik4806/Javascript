@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- beforebegin  -->
+    <div id="intro"> <!-- selected tag -->
+        <!-- afterbegin -->
+        <h2>heading</h2>
+        <p>this is a p Tag</p>
+        <!-- beforeend -->
+    </div>
+    <!-- afterend -->
+
+    <script>
+        let element = document.getElementById("intro");
+        if (element) {
+            let html = "<h1> new h1 tag </h1>";
+            element.insertAdjacentHTML('beforebegin', html);
+            element.insertAdjacentHTML('afterbegin', html);
+            element.insertAdjacentHTML('beforeend', html);
+            element.insertAdjacentHTML('afterend', html);
+        } else {
+            console.error("Element with ID 'intro' not found.");
+        }
+
+    </script>
+</body>
+
+</html>

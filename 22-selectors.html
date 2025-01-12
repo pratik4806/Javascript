@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script defer src="./script.js"></script> -->
+</head>
+
+<body>
+    <!-- <h1 id="h">hi there </h1>
+    <script src="./script.js"></script>
+    <script src="./variable.js"></script> -->
+    <!-- <script src="./loops.js"></script> -->
+    <!-- <script src="./alert$prompt$confirm.js"></script> -->
+    <!-- <script src="./datatypeconversion.js"></script> -->
+    <!-- <script src="./string.js"></script> -->
+    <!-- <script src="./array.js"></script> -->
+    <!-- <script src="./function.js"></script>
+     <script src="./thirdparty.js"></script>
+     <script src="./object.js"></script> -->
+    <!-- <script src="./methodinobject.js"></script>
+     <script src="./this.js"></script> -->
+    <!-- <script src="./math.js"></script> -->
+    <!-- <script src="./random.js"></script> -->
+    <!-- <script src="./date.js"></script> -->
+    <!-- <script src="./newkeyword.js"></script> -->
+    <!-- <script src="./objectConstructor.js"></script> -->
+    <!-- <script src="./nestedObject.js"></script> -->
+    <!-- <script src="./hoisting.js"></script> -->
+    <!-- <script src="./DOM.js"></script> -->
+    <!-- select element by id -->
+    <ul>
+        <li class="cl pi">list 1</li>
+        <li id="second">list 2</li>
+        <li class="cl">list 3</li>
+    </ul>
+
+    <h2>Heading 1</h2>
+    <div id="div1">
+        <p>prargraph 1</p>
+
+        <h2>Heading 2</h2>
+        <p>prargraph 2</p>
+
+        <h2>Heading 3</h2>
+        <p>prargraph 3</p>
+
+        <h2 class="intro">Heading 1</h2>
+        <div id="div1">
+            <p class="intro">prargraph 1</p>
+
+            <h2 class="intro">Heading 2</h2>
+            <p>prargraph 2</p>
+
+            <h2>Heading 3</h2>
+            <p class="intro">prargraph 3</p>
+
+        </div>
+        <script>
+            // id selector
+            let element = document.getElementById("second");
+            console.log(element)
+            console.log(element.innerHTML = "hi there");
+
+            // class selector
+            let elm1 = document.getElementsByClassName('cl')
+            let elm2 = document.getElementsByClassName('cl pi')
+            console.log(elm1.length)
+            console.log(elm2.length)
+            //as many elment having the same classname therefore it create a collection of objects in the form of the array.
+
+            for (let i = 0; i < elm1.length; i++) {
+                elm1[i].innerHTML = "<p> hello there </p>"
+            }
+            for (let i = 0; i < elm2.length; i++) {
+                elm2[i].innerHTML = "<p> hello</p>"
+            }
+
+            // tag selector
+            let heading = document.getElementsByTagName("h2");
+            let para = document.getElementsByTagName("p");
+            for (let i = 0; i < heading.length; i++) {
+                heading[i].innerHTML = "this is heading"
+            }
+            for (let i = 0; i < para.length; i++) {
+                para[i].innerHTML = "this is paragraph"
+            }
+
+            let div1 = document.getElementById("div1")
+            let tag = div1.getElementsByTagName("h2");
+            for (let i = 0; i < tag.length; i++) {
+                tag[i].innerHTML = "this is inside div1 tag"
+            }
+
+            // this function selects only first matching tag.
+            let r = document.querySelector("p.intro");
+            r.innerHTML = "this is query selector"
+            r.style.backgroundColor = "green";
+
+            // this function selects only all matching tag.
+            let r1 = document.querySelectorAll("p.intro");
+            for (let i = 0; i < r1.length; i++) {
+                r1[i].innerHTML = "this is query selector all"
+                r1[i].style.backgroundColor = "blue";
+            }
+            
+
+
+
+        </script>
+
+</body>
+
+</html>
+
+<!-- we can write script tag inside <head> tag and <body> tag as well -->
+<!-- we can have as many <script> tag inside the head and body tag -->
+<!-- html executes from top to bottom  -->
+<!-- hence if you want to load javascript code first then place the script tag in head tag -->
+<!-- if we use the external javascript then first time it will load the script.js file, then for the second time if we open the webpage again then it will then it is cached by the browser means the webpage will load faster -->
+
+<!-- 
+async
+If the async attribute is set, the script is downloaded in parallel to parsing the page, and executed as soon as it is available. The parsing of the page is interrupted once the script is downloaded completely, and then the script is executed, before the parsing of the rest of the page continues.
+
+parallel download the document, download the document , execute the file.
+-->
+
+<!-- defer
+If the defer attribute is set, it specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing. 
+
+read the whole document first, then download the document,execute the file.
+
+defer doesnot work on the method document.write();
+-->

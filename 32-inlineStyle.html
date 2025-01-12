@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline</title>
+</head>
+
+<body>
+    <button id="btn">
+        send
+    </button>
+
+    <script>
+        let button = document.getElementById('btn')
+        //  1st method
+        //  button.style.cssText = 'background-color:green; color:white;padding:10px;border-radius:10px;border:none;outline:none; '
+
+        //  2nd method
+        //  button.setAttribute('style','background-color:green; color:white;padding:10px;border-radius:10px;border:none;outline:none;')
+
+        // change individual style
+        button.style.color = 'red'
+        button.style.cssText = 'background:blue'
+    </script>
+</body>
+
+</html>

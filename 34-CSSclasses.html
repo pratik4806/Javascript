@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Classes</title>
+    <style>
+        .clr{
+            background-color: palegoldenrod;
+            color: rebeccapurple;
+        }
+        .dim{
+            border: 1px solid blue;
+            padding: 100px;
+        }
+        .text{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="clr">
+        <p class="text">this is a dummy text</p>
+    </div>
+
+    <script>
+       let box = document.getElementById('box');
+       console.log(box.className)
+
+    //    adding class using the javascript
+    box.className += " dim"
+
+    console.log(box.classList)
+
+    for (let css of box.classList) {
+       console.log(css)
+    }
+    // add new class explicitly.
+    box.classList.add = 'division'
+
+    // remove existing classes.
+    // box.classList.remove = 'division'
+
+    // repalce class
+    box.classList.replace('division', 'divide')
+
+    // check if the class is present to that particular element.
+    let res = box.classList.contains('clr')
+    console.log(res)
+
+    // toggle - it add the class if not present, and removes the class id present
+    box.classList.toggle('divide')
+    </script>
+</body>
+</html>

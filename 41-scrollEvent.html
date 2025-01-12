@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll events</title>
+    <style>
+        body {
+            height: 2000px;
+            width: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hello</h1>
+    <script>
+
+        // // this event will detect the scroll 
+        // window.addEventListener('scroll', function () {
+        //     console.log('scrolling....')
+        // })
+
+
+        // deltaX - for scrolling horizontally
+        // deltaY - for scrolling vertically
+        window.addEventListener('wheel', function (event) {
+                if (event.deltaX < 0) {
+                    console.log("scrolling left");
+                } else if (event.deltaX > 0) {
+                    console.log("scrolling right");
+                }
+
+                if (event.deltaY < 0) {
+                    console.log("scrolling up");
+                } else if (event.deltaY > 0) {
+                    console.log("scrolling down");
+                }
+            });
+
+            window.addEventListener('scroll',  function(){
+                if (window.pageYOffset > 150) {
+                    console.log('150px crossed')
+                    document.body.style.background = 'red';
+                }else{
+                    document.body.style.background = 'white';
+                }
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>

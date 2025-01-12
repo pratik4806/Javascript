@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Validation</title>
+</head>
+<style>
+    body {
+        background-color: #3498db;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container {
+        border: 1px solid black;
+        height: 50vh;
+        width: 25vw;
+        margin: auto;
+        padding: 50px;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0px 0px 10px 0px;
+    }
+
+    input {
+        width: 200px;
+        margin: 10px 0px;
+        padding: 10px;
+
+    }
+
+    input[type="submit"] {
+        width: 226px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .error {
+        color: red;
+        margin: 0px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="form-container">
+        <h2>login</h2>
+        <form action="#" onsubmit="return validateForm()">
+            <input type="text" placeholder="username" id="username"><br>
+            <p id="user-error" class="error"></p>
+            <input type="password" placeholder="password" id="password"><br>
+            <p id="password-error" class="error"></p>
+            <input type="submit"><br>
+        </form>
+    </div>
+
+    <script>
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let flag = 1;
+
+        function validateForm() {
+            if (username.value.trim() == "") {
+                document.getElementById('user-error').innerHTML = "Username is required";
+                flag = 0;
+            } else if (username.value.length < 3) {
+                document.getElementById('user-error').innerHTML = "Username requires atleast 3 charcters";
+                flag = 0;
+            } else {
+                document.getElementById('user-error').innerHTML = " ";
+                flag = 1;
+            }
+
+            if (password.value.trim() == "") {
+                document.getElementById('password-error').innerHTML = "Password is required";
+                flag = 0;
+            } else if (password.value.length < 8) {
+                document.getElementById('password-error').innerHTML = "Password requires atleast 8 charcters";
+                flag = 0;
+            } else {
+                document.getElementById('password-error').innerHTML = " ";
+                flag = 1;
+            }
+
+            if(flag) return true;
+            else return false;
+        }
+
+    </script>
+</body>
+
+</html>

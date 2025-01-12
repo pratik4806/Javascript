@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page load events</title>
+</head>
+
+<body>
+    <!-- DOMcontentloaded -->
+    <!-- the browser fully loaded the HTML and completed building the DOM tree, however it hasn't loaded external resources like style sheet and images. in this event you can  start selecting the DOM nodes or initialize the  interface  -->
+
+    <!-- load event =  the browser load the HTML and also external resources like style sheet and images -->
+
+    <img id="image1" width="500" src="./images/image.jpg" alt="">
+    <script>
+        let img = document.getElementById('image1');
+        window.addEventListener('DOMContentLoaded', function () {
+            console.log("DOM tree created")
+        })
+
+        // when the image will load fully the then this event will trigger.
+        img.addEventListener('load', function () {
+            console.log("external item full loaded")
+        })
+
+    </script>
+</body>
+
+</html>

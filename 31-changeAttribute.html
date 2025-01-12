@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change attribute</title>
+</head>
+
+<body>
+    <button id="btn">
+        send
+    </button>
+    <script>
+        let button = document.getElementById('btn')
+        button.setAttribute('name', 'form1')
+        button.setAttribute('class', 'send')
+
+        // find the value of the attribute inside that element.
+        let val = button.getAttribute('class') //it will give the value of the attribute name
+        console.log(val)
+
+        // remove the attribute from the element.
+        button.removeAttribute('name')
+
+        // check if attribute exist
+        console.log(button.hasAttribute('class')) // it returns the true if attribute exist and return false if not exist.
+
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser object Model</title>
+</head>
+
+<body>
+    <!-- the window object represents the window of the browser. -->
+    <!-- when we open the website the browser automatically creates the window object. -->
+    <!-- all global javascript object, functions and variables with the var keyword automatically becomes the member of the window object. -->
+    <!-- global variable are the perperties of the window object. -->
+    <!-- global methods are the methods of the window object. -->
+
+    <button id="btn1">google</button>
+    <button id="btn2">yahoo</button>
+    <button id="btn3">close</button>
+    <script>
+        var x = 'hello..'
+        console.log(window.x)
+
+        function xyz() {
+            console.log('hi there')
+        }
+        window.xyz();
+
+        // window is the default object if the browser.
+        window.alert('alert')
+        window.confirm('hi there')
+
+        let url = 'https://www.google.com'
+        let features = 'height=500,width=500';
+        let win
+
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn1');
+        let btn3 = document.getElementById('btn1');
+
+        btn1.addEventListener('click', function () {
+            win = window.open(url, 'google', features)
+        })
+        btn2.addEventListener('click', function () {
+            window.open('https://www.yahoo.com', 'yahoo', 'google')
+        })
+        btn2.addEventListener('click', function () {
+           win.close()
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

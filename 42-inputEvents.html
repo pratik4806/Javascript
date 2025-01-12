@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Form</title>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input id="inp" type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let i = document.getElementById('inp');
+        i.addEventListener('focus', myfocus);
+        i.addEventListener('blur', myblurr);
+        i.addEventListener('change', function(){
+            console.log(this.value)
+        });
+        
+        // this event will trigger when user inputs the something.
+        i.addEventListener('input', function(){
+            console.log(this.value)
+        });
+
+        function myfocus() {
+            i.style.background = 'yellow'
+        }
+        function myblurr() {
+            i.style.background = 'white'
+        }
+    </script>
+</body>
+
+</html>

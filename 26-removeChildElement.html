@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- remove the child element -->
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>product</li>
+        <li>about us</li>
+        <li>contact us</li>
+    </ul>
+
+    <script>
+
+        let parent = document.getElementById("menu")
+        let elm1 = parent.firstElementChild;
+        let elm2 = parent.firstElementChild.nextElementSibling;
+
+        parent.removeChild(elm1)
+        parent.removeChild(elm2)
+
+        // remove parent element i.e ul
+        document.body.removeChild(parent)
+
+    </script>
+</body>
+
+</html>

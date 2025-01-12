@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button id="btn">clear interval</button>
+    <script>
+        let to = setTimeout(myfunction, 4000);
+
+        function myfunction(){
+            alert('executed after 4000 ms')
+        }
+
+        // destroy the timeout
+        clearTimeout(to);
+
+        // it repeates after every 2s
+        var i = setInterval(fun, 2000)
+        function fun(){
+            alert('set interval')
+        }
+
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', function(){
+            clearInterval(i)
+        })
+    </script>
+</body>
+</html>

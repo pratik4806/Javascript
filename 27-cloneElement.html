@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="menu">
+        <li>Home</li>
+        <li>product</li>
+        <li>about us</li>
+        <li>contact us</li>
+    </ul>
+    <script>
+        let menu = document.getElementById('menu')
+        // when we write the cloneNode(true) it clones the entire parent + child element i.e ul + li.
+        // when we write the cloneNode(false) it clones only the parent element.
+        let cloneElement = menu.cloneNode(true);
+        console.log(cloneElement);
+
+        cloneElement.id = 'nav-menu'
+        document.body.append(cloneElement)
+    </script>
+</body>
+</html>

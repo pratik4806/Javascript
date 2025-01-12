@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent Default</title>
+</head>
+
+<body>
+    <!-- prevent default alters the default behavior of the element
+     like here while clicking on the link it will redirect to google on one click. that we can alter with prevent default -->
+    <form id="myform" action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="https://www.google.com" target="_blank" id="anchor">click me</a>
+    <script>
+        let link = document.getElementById('anchor')
+        link.addEventListener('click', function (e) {
+            console.log('link clicked')
+            e.preventDefault()
+        })
+        
+        let form = document.getElementById('myform')
+        form.addEventListener('submit', function (e) {
+            console.log('form clicked')
+            e.preventDefault()
+        })
+        
+    </script>
+</body>
+
+</html>

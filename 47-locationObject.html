@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location object</title>
+</head>
+<body>
+    <button id="btn">redirect me to google.com</button>
+    <script>
+        console.log(window.location.href)
+        console.log(window.location.pathname)
+        console.log(window.location.protocol)
+
+        let b = document.getElementById('btn')
+        b.addEventListener('click', function(){
+            // these methods store the back redirection history means you can get back to previous page
+            // location = 'https://www.google.com'
+            // location.href = 'https://www.google.com'
+            // location.assign('https://www.google.com')
+
+            // this doesnot store history.
+            location.replace('https://www.google.com')
+
+            // refersh the webpage
+            location.reload()
+        })
+    </script>
+</body>
+</html>

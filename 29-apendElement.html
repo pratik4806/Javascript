@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apend</title>
+</head>
+<body>
+    <ul id="lists">
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+    </ul>
+    <script>
+        let listitems = document.getElementById("lists") //parent selected
+        let item = document.createElement("li");
+        item.textContent = " new list item"
+        listitems.appendChild(item);
+
+        // insert before position
+        let position1 = listitems.firstElementChild;
+        // position between the 1st and 2nd child.
+        let position2 = listitems.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
+
+        listitems.insertBefore(item, position1)
+        listitems.insertBefore(item, position2)
+
+
+        let parent = document.body
+        let elm = document.createElement('h2')
+        elm.textContent = 'this is an H2 element'
+
+        // insert on the body above the lists tag.
+        let list = document.getElementById('lists')
+        parent.insertBefore(elm, list)
+    </script>
+</body>
+</html>

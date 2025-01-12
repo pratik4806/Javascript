@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 20px 100px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .about-image {
+        height: 400px;
+        width: 600px;
+        border: 2px solid rgb(145, 145, 235);
+        margin: auto;
+        border-radius: 10px;
+
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        margin: 0px auto;
+        background-color: white;
+        border-radius: 10px;
+
+    }
+    p{
+        text-align: justify;
+    }
+
+    .btn{
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        border: 1px solid red;
+        border-radius: 50%;
+    }
+    #white{
+        background-color: white;
+    }
+    #aqua{
+        background-color: aqua;
+    }
+    #voilet{
+        background-color: violet;
+    }
+    #black{
+        background-color: black;
+    }
+    #color-swticher{
+        text-align: right;
+    }
+</style>
+<body>
+    <div id="color-swticher">
+       <span class="btn" id="white" onclick="ChangeBackground('#ffffff')"></span>
+       <span class="btn" id="aqua" onclick="ChangeBackground('#7fffd4')"></span>
+       <span class="btn" id="voilet" onclick="ChangeBackground('#ce9aff')"></span>
+       <span class="btn" id="black" onclick="ChangeBackground('#000000')"></span>
+    </div>
+    <h1 class="text">Background Changer</h1>
+    <div class="about-image">
+        <img src="./image.png" alt="about me">
+    </div>
+    <p class="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia quod et quam aut enim excepturi, eaque
+        consectetur? Enim eos inventore repudiandae distinctio quae architecto dicta consequuntur ipsam, odio laudantium
+        aspernatur molestias earum recusandae corporis cum ut ipsum aliquid accusamus. Ducimus sit debitis iste
+        cupiditate omnis veritatis suscipit rem praesentium in quo tempora, ut saepe qui! Repellat repellendus corporis
+        quas eos accusamus! Provident a ea in molestias, consequatur quod nemo cum unde eligendi laboriosam, qui
+        repellendus. Delectus laborum inventore et architecto ea fugit repudiandae doloribus dignissimos nam adipisci,
+        qui commodi placeat earum tenetur eius dolor aut ab totam asperiores recusandae esse temporibus eos. Ex
+        explicabo ea dolores accusamus, perspiciatis, nesciunt autem laborum et aperiam expedita sapiente facilis
+        necessitatibus doloremque tempore aspernatur quam libero, vitae quis voluptatum aut sequi debitis. Cum, quae
+        praesentium numquam, omnis ipsam non, quaerat iste nam architecto dolorum corrupti aperiam deserunt repellendus
+        mollitia ullam perspiciatis quo. Perspiciatis sapiente harum consequuntur mollitia earum. Corporis reprehenderit
+        similique, cupiditate numquam voluptatum iusto accusantium ducimus repellendus, perspiciatis incidunt vitae
+        adipisci laborum ipsam ad magni inventore voluptas laudantium quo. Laboriosam quia autem nihil veritatis atque
+        ex amet facilis recusandae dignissimos magnam, praesentium nam eveniet soluta eum laudantium maxime commodi.
+        Sequi harum inventore consectetur explicabo illo enim eligendi quas quis maiores cumque cupiditate mollitia
+        earum veniam sapiente debitis amet molestias, corrupti excepturi eos error deserunt qui asperiores delectus. Et,
+        nam. Repudiandae maiores est animi architecto hic fugiat porro corrupti et minima harum quo in voluptatum, fuga
+        ipsa, blanditiis odio! Itaque totam voluptatibus quas optio deserunt ad aliquid exercitationem voluptates
+        facilis ducimus a ea, quisquam inventore, ex facere, ipsum nisi quasi aperiam dicta blanditiis alias perferendis
+        perspiciatis ullam? Eveniet error hic facere. Labore atque vero, asperiores, nemo iste ullam quia dolorem
+        laborum quos facere excepturi! Quaerat recusandae commodi delectus illum adipisci nulla at inventore, hic ut
+        esse, incidunt officiis eaque distinctio quas quae ratione fuga fugiat eveniet libero quisquam mollitia animi?
+        Mollitia a dicta incidunt ratione illo molestiae, inventore, placeat suscipit fugiat asperiores voluptatum id
+        beatae animi laudantium dignissimos assumenda iusto nulla quo laboriosam! Vel, animi modi architecto id voluptas
+        suscipit, perspiciatis, autem dolor voluptatum amet mollitia atque molestiae obcaecati. Quae, esse voluptatem
+        pariatur itaque minima sed magni magnam commodi non iusto molestiae quas dolore? Error, distinctio laborum,
+        exercitationem praesentium blanditiis magni, et voluptatibus quos officiis at illum debitis nobis ipsum? Numquam
+        iure aliquam doloribus quisquam facilis sint ut possimus fuga saepe, nobis voluptas quia et maiores veritatis
+        dicta placeat! Consectetur dolorum accusamus quae impedit illo laborum. Corporis porro suscipit consequuntur
+        iure dolore quam, iste quidem autem. Eveniet enim nostrum impedit aut dignissimos ipsa rerum dolorum molestias.
+        Officiis placeat nobis expedita, repudiandae ratione inventore voluptatem architecto laborum dolores sapiente
+        earum animi maxime quo voluptas dolorem quam necessitatibus? Animi, ipsum! Cumque magni quod delectus nisi
+        officia saepe ratione, rem in doloribus unde quam beatae maiores ea similique laborum provident voluptate
+        consectetur aspernatur. Facere tenetur tempora labore perspiciatis non architecto beatae in dicta? Officiis
+        illum tempore, quae alias unde eius nulla iusto, iure nobis quisquam harum magni.
+    </p>
+    <script>
+         function ChangeBackground(color){
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName('text');
+            if(color == "#000000"){
+                for(let element of txt){
+                    element.style.color = "#ffffff";
+                }
+            }else{
+                for(let element of txt){
+                    element.style.color = "#000000";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word counter</title>
+</head>
+<style>
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+        padding: 40px 100px;
+    }
+
+    h1 {
+        text-align: center;
+        background-color: #0067B0;
+        color: white;
+        padding: 10px;
+        margin: 0px;
+    }
+
+    #text-box {
+        width: 99.5%;
+        border-color: #0067B0;
+        font-size: 15px;
+    }
+    p{
+        text-align: center;
+        height: 50px;
+        background-color:#0067B0;
+        margin:0px;
+        padding: 10px 20px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+    }
+</style>
+
+<body>
+    <h1>word and character counter</h1>
+    <textarea style="resize:none" id="text-box" cols="30" rows="10"></textarea>
+    <p><span id="word">0</span> words and <span id="character">0</span> characters</p>
+
+    <script>
+        let textbox = document.getElementById('text-box')
+        textbox.addEventListener('input', function() {
+            var text = this.value;
+            let charcter = text.length;
+            document.getElementById('character').innerHTML = charcter;
+
+            text = text.trim();
+            let words = text.split(" ");
+            let cleanlist = words.filter(function(spaces){
+                return spaces != "";
+            });
+            document.getElementById('word').innerHTML = cleanlist.length;
+        });
+    </script>
+</body>
+
+</html>

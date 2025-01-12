@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM events</title>
+</head>
+
+<body>
+    <!-- DOM events are actions that occurs as a result of the user action or as a result of the state change of the elements of the DOM tree. -->
+
+    <!-- example of DOM/HTML events -->
+    <!-- 1. when user clicks the mouse
+     2. when the webpage has loaded
+     3. when the image has loaded
+     4. when mouse moves over an element.
+     5. when an input field has changes
+     6. when HTML form is submitted
+     7. when user strokes a key. -->
+
+    <!-- https://www.w3schools.com/jsref/dom_obj_event.asp -->
+
+    <button id="btn" onclick="Buttonclick()">click me</button>
+    <script>
+        let b = document.getElementById('btn')
+
+        function Buttonclick(){
+            alert('button clicked');
+        }
+
+        // throgh event listener
+        b.addEventListener('click', function(){
+            alert('button clicked');
+        })
+
+        b.addEventListener('mouseover', function(){
+            console.log("mouse over event activated")
+        })
+        b.addEventListener('mouseout', function(){
+            console.log("mouse out event activated")
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling and Capturing</title>
+    <style>
+        body {
+            padding: 100px;
+            background-color: cornsilk;
+        }
+
+        #mydiv {
+            padding: 50px;
+            background-color: darkblue;
+            border-radius: 5px;
+        }
+
+        #btn {
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: aliceblue;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mydiv">
+        <button id="btn" aria-label="Click this button">click me</button>
+    </div>
+    <script>
+        const divElement = document.getElementById('mydiv');
+        const buttonElement = document.getElementById('btn');
+
+        // Bubbling example:
+        // buttonElement.addEventListener('click', btnClick);
+        // divElement.addEventListener('click', divClick);
+        // document.body.addEventListener('click', bodyClicked);
+
+        // Capturing example:
+        // buttonElement.addEventListener('click', btnClick, true);
+        // divElement.addEventListener('click', divClick, true);
+        // document.body.addEventListener('click', bodyClicked, true);
+
+        function btnClick(event) {
+            console.log('Button clicked. Stopping propagation.');
+            event.stopPropagation(); // Prevents further propagation
+        }
+
+        function divClick(event) {
+            console.log('Div clicked. Stopping propagation.');
+            event.stopPropagation();
+        }
+
+        function bodyClicked(event) {
+            console.log('Body clicked.');
+        }
+    </script>
+</body>
+
+</html>

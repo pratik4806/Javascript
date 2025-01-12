@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="fun1()">
+
+    </div>
+    <div class="box" oncontextmenu="fun2()">
+
+    </div>
+    <div class="box" ondblclick="fun3()">
+
+    </div>
+    <div class="box" onmousedown="fun4()">
+
+    </div>
+    <div class="box" onmouseup="fun5()">
+
+    </div>
+    <div class="box" onmouseover="fun6()">
+
+    </div>
+    <div class="box" onmouseout="fun7()">
+
+    </div>
+
+    <script>
+        function fun1(){
+            alert(' on click event')
+        }
+
+        // this event wil trigger when you right click the mouse.
+        function fun2(){
+            alert('oncontextmenu event')
+        }
+
+        function fun3(){
+            alert('double click event')
+        }
+
+        function fun4(){
+            alert('mouse down event')
+        }
+        function fun5(){
+            alert('mouse up event')
+        }
+        function fun6(){
+            alert('on mouse over event')
+        }
+        function fun7(){
+            alert('on mouse out event')
+        }
+    </script>
+    
+</body>
+</html>
