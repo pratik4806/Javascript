@@ -1,6 +1,6 @@
 // let coding = ["C", "C++", "Java", "JavaScript", "python"];
 
-// // for each donot return any values.
+// // for each donot return any values automatically.
 // let values = coding.forEach((items) => {
 //   //   console.log(items);
 //   return items;
