@@ -14,12 +14,12 @@
 //  if the order placed delivered successfully, then promise is fulfilled, called as resolve
 //  if the order placed rejected or canceled,then promise is unfulfilled, called as reject
 
-let promise1 = new Promise((resolve, reject) => {
-  console.log("I am a promise");
-  // after this resolved state is fulfilled from last pending. and promiseReslult will be the resolved message inside/ or it can be anything that you want to return.
-  // resolve("order delivered successfully...")
-  reject("error occured");
-});
+// let promise1 = new Promise((resolve, reject) => {
+//   console.log("I am a promise");
+//   // after this resolved state is fulfilled from last pending. and promiseReslult will be the resolved message inside/ or it can be anything that you want to return.
+//   // resolve("order delivered successfully...")
+//   reject("error occured");
+// });
 
 // this promise object 3 state.
 // 1. prototype object
@@ -34,18 +34,18 @@ let promise1 = new Promise((resolve, reject) => {
 
 // example
 
-function getData(dataID, getNextData) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // console.log("data - ", dataID);
-      // resolve("success..")
-      reject('error')
-      if (getNextData) {
-        getNextData();
-      }
-    }, 5000);
-  });
-}
+// function getData(dataID, getNextData) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // console.log("data - ", dataID);
+//       // resolve("success..")
+//       reject("error");
+//       if (getNextData) {
+//         getNextData();
+//       }
+//     }, 5000);
+//   });
+// }
 // this will return the promise in the getData function after 2000ms
 
 // pending = the result is undefined
@@ -53,53 +53,73 @@ function getData(dataID, getNextData) {
 // rejected = the result is an error object    -> reject(error)
 
 // after promise fulfill we we have to implement promise.then((res) => {...} method to return the additional information.
-const getPromise = () => {
-  return new Promise((resolve, reject) => {
-    console.log("I am a Promise");
-    // resolve('success') // stored in res.
-    reject("error in this"); // stored in err.
-  });
-};
+// const getPromise = () => {
+//   return new Promise((resolve, reject) => {
+//     console.log("I am a Promise");
+//     // resolve('success') // stored in res.
+//     reject("error in this"); // stored in err.
+//   });
+// };
 
-let promise2 = getPromise();
-promise
-  .then((res) => {
-    console.log("promise fulfilled -> ", res);
-  })
-  .catch((err) => {
-    console.log("promise unfulfilled -> ", err);
-  });
+// let promise2 = getPromise();
+// promise
+//   .then((res) => {
+//     console.log("promise fulfilled -> ", res);
+//   })
+//   .catch((err) => {
+//     console.log("promise unfulfilled -> ", err);
+//   });
 
 // after promise reject we we have to implement promise.catch((err) => {...} method to return the additional information.
 
-function asyncFunction() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("some data here");
-      resolve("success");
-    }, 5000);
-  });
-}
-function asyncFunction1() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("some data here");
-      resolve("success");
-    }, 5000);
-  });
-}
-function asyncFunction2() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("some data here");
-      resolve("success");
-    }, 5000);
-  });
-}
+// function asyncFunction() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("some data here");
+//       resolve("success");
+//     }, 5000);
+//   });
+// }
+// function asyncFunction1() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("some data here");
+//       resolve("success");
+//     }, 5000);
+//   });
+// }
+// function asyncFunction2() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("some data here");
+//       resolve("success");
+//     }, 5000);
+//   });
+// }
 
-// promise chanining.
-console.log("fetching data 1");
-asyncFunction1().then((res) => {
-  console.log("fetching data 2");
-  asyncFunction2().then((res) => {});
+// // promise chanining.
+// console.log("fetching data 1");
+// asyncFunction1().then((res) => {
+//   console.log("fetching data 2");
+//   asyncFunction2().then((res) => {});
+// });
+
+// promise all method - resolve bunch of promises
+let promiseOne = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("promise one resolve");
+  }, 3000);
 });
+let promiseTwo = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("promise two rejected");
+  }, 2000);
+});
+
+Promise.all([promiseOne, promiseTwo])
+  .then((data) => {
+    console.log(data[0], data[1]);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
